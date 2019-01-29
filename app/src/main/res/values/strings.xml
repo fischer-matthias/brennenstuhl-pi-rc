@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Brennstuhl-PiRC</string>
+    <string name="app_name">Brennenstuhl-PiRC</string>
     <string name="rasppi.ip.address">Raspberry Pi - IP-Address</string>
     <string name="rasppi.systemcode">Systemcode</string>
 </resources>

@@ -4,7 +4,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import java.util.regex.Pattern
 
-class IPMaskTextWatcher() : TextWatcher {
+class IPMaskTextWatcher : TextWatcher {
 
     private val regex = Pattern.compile("^((25[0-5]|2[0-4][0-9]|[0-1][0-9]{2}|[1-9][0-9]|[0-9])\\.){0,3}((25[0-5]|2[0-4][0-9]|[0-1][0-9]{2}|[1-9][0-9]|[0-9])){0,1}$")
     private var previousText: String = ""
@@ -12,10 +12,6 @@ class IPMaskTextWatcher() : TextWatcher {
     override fun afterTextChanged(s: Editable) {
         if (regex.matcher(s).matches()) {
             previousText = s.toString()
-
-            if (previousText.length == 3 || previousText.length == 7) {
-                s.append(".")
-            }
         } else {
             s.replace(0, s.length, previousText)
         }
