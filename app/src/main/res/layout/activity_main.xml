@@ -7,62 +7,167 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
     <EditText
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:text="Raspberry pi IP"
+            android:inputType="number"
+            android:digits="0123456789."
             android:ems="10"
-            tools:layout_editor_absoluteY="53dp" android:id="@+id/rapiIP"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            android:id="@+id/iIP" tools:layout_editor_absoluteX="45dp"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent"
+            android:hint="@string/rasppi.ip.address"/>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="64dp"
+            app:layout_constraintTop_toBottomOf="@+id/iIP" android:id="@+id/linearLayout"
+            android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="8dp">
+        <TextView
+                android:text="@string/rasppi.systemcode"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp" android:id="@+id/tvSystemcode"
+                tools:layout_editor_absoluteY="62dp" android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginLeft="8dp" android:layout_marginStart="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="8dp" android:layout_marginRight="8dp" android:layout_marginBottom="8dp"/>
+        <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginEnd="32dp"
+                android:layout_marginRight="32dp" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginLeft="32dp"
+                android:layout_marginStart="32dp" android:gravity="center"
+                app:layout_constraintStart_toStartOf="parent" android:baselineAligned="false"
+                android:id="@+id/tableLayout2" android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent" android:layout_marginTop="8dp"
+                app:layout_constraintTop_toTopOf="parent">
+
+            <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
+                <TextView
+                        android:text="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/tv1" android:textIsSelectable="false"
+                        android:layout_gravity="center"/>
+                <TextView
+                        android:text="2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/tv2" android:layout_gravity="center"/>
+                <TextView
+                        android:text="3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/tv3" android:layout_gravity="center"/>
+                <TextView
+                        android:text="4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/tv4" android:layout_gravity="center"/>
+                <TextView
+                        android:text="5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/tv5" android:layout_gravity="center"/>
+            </TableRow>
+            <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
+                <Switch
+                        android:layout_width="wrap_content" android:rotation="-90"
+                        android:layout_height="wrap_content" tools:layout_editor_absoluteY="176dp"
+                        tools:layout_editor_absoluteX="32dp" android:id="@+id/sys1"
+                        android:height="42sp"/>
+                <Switch
+                        android:layout_width="wrap_content" android:rotation="-90"
+                        android:layout_height="wrap_content" tools:layout_editor_absoluteY="183dp"
+                        tools:layout_editor_absoluteX="94dp" android:id="@+id/sys2"
+                        android:height="42sp"/>
+                <Switch
+                        android:layout_width="wrap_content" android:rotation="-90"
+                        android:layout_height="wrap_content" tools:layout_editor_absoluteY="203dp"
+                        tools:layout_editor_absoluteX="163dp" android:id="@+id/sys3"
+                        android:height="42sp"/>
+                <Switch
+                        android:layout_width="wrap_content" android:rotation="-90"
+                        android:layout_height="wrap_content" tools:layout_editor_absoluteY="120dp"
+                        tools:layout_editor_absoluteX="133dp" android:id="@+id/sys4"
+                        android:height="42sp"/>
+                <Switch
+                        android:layout_width="wrap_content" android:rotation="-90"
+                        android:layout_height="wrap_content" tools:layout_editor_absoluteY="210dp"
+                        tools:layout_editor_absoluteX="266dp" android:id="@+id/sys5"
+                        android:height="42sp"/>
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
     <TableLayout
-            android:layout_width="395dp"
-            android:layout_height="41dp" tools:layout_editor_absoluteY="106dp" tools:layout_editor_absoluteX="8dp"
-            android:orientation="horizontal" android:gravity="center">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/tableLayout3" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp">
 
         <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
+            <Button
+                    android:text="ON"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/bAON"/>
             <TextView
-                    android:text="1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/tv1"/>
-            <TextView
-                    android:text="2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/tv2"/>
-            <TextView
-                    android:text="3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/tv3"/>
-            <TextView
-                    android:text="4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/tv4"/>
-            <TextView
-                    android:text="5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/tv5"/>
+                    android:text="A"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/tvA" android:textSize="24sp"
+                    android:layout_marginLeft="2sp" android:layout_marginRight="2sp"/>
+            <Button
+                    android:text="OFF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/bAOFF"/>
         </TableRow>
         <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
-            <Switch
+            <Button
+                    android:text="ON"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" tools:layout_editor_absoluteY="176dp"
-                    tools:layout_editor_absoluteX="32dp" android:id="@+id/sys1"/>
-            <Switch
+                    android:layout_height="wrap_content" android:id="@+id/bBON"/>
+            <TextView
+                    android:text="B"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" tools:layout_editor_absoluteY="183dp"
-                    tools:layout_editor_absoluteX="94dp" android:id="@+id/sys2"/>
-            <Switch
+                    android:layout_height="wrap_content" android:id="@+id/tvB" android:textSize="24sp"
+                    android:layout_marginLeft="2sp" android:layout_marginRight="2sp"/>
+            <Button
+                    android:text="OFF"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" tools:layout_editor_absoluteY="203dp"
-                    tools:layout_editor_absoluteX="163dp" android:id="@+id/sys3"/>
-            <Switch
+                    android:layout_height="wrap_content" android:id="@+id/bBOFF"/>
+        </TableRow>
+        <TableRow android:layout_width="wrap_content" android:layout_height="match_parent">
+            <Button
+                    android:text="ON"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" tools:layout_editor_absoluteY="120dp"
-                    tools:layout_editor_absoluteX="133dp" android:id="@+id/sys4"/>
-            <Switch
+                    android:layout_height="wrap_content" android:id="@+id/bCON"/>
+            <TextView
+                    android:text="C"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" tools:layout_editor_absoluteY="210dp"
-                    tools:layout_editor_absoluteX="266dp" android:id="@+id/sys5"/>
+                    android:layout_height="wrap_content" android:id="@+id/tvC" android:textSize="24sp"
+                    android:layout_marginLeft="2sp" android:layout_marginRight="2sp"/>
+            <Button
+                    android:text="OFF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/bCOFF"/>
+        </TableRow>
+        <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
+            <Button
+                    android:text="ON"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/bDON"/>
+            <TextView
+                    android:text="D"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/tvD" android:textSize="24sp"
+                    android:layout_marginLeft="2sp" android:layout_marginRight="2sp"/>
+            <Button
+                    android:text="OFF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/bDOFF"/>
         </TableRow>
     </TableLayout>
 </android.support.constraint.ConstraintLayout>
